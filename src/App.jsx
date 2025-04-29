@@ -28,6 +28,7 @@ import vector2 from './assets/vector2.png'
 import vector3 from './assets/vector3.png'
 import vector4 from './assets/vector4.png'
 import vector5 from './assets/vector5.png'
+import vector from './assets/vector.png';
 import accenture from './assets/accenture.png'
 import course1 from './assets/course1.jpeg'
 import course2 from './assets/course2.png'
