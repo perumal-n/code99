@@ -28,6 +28,7 @@ import vector2 from './assets/vector2.png'
 import vector3 from './assets/vector3.png'
 import vector4 from './assets/vector4.png'
 import vector5 from './assets/vector5.png'
+import vector from './assets/vector.png';
 import accenture from './assets/accenture.png'
 import course1 from './assets/course1.jpeg'
 import course2 from './assets/course2.png'
@@ -36,6 +37,8 @@ import course4 from './assets/course4.jpeg'
 import course5 from './assets/course5.png'
 import tools from './assets/tools.jpg'
 import contact_img from './assets/contact.png'
+import vector6 from './assets/vector6.png'
+import vector7 from './assets/vector7.png'
 import batch1 from './assets/batch1.png'
 import batch2 from './assets/batch24.png'
 import batch3 from './assets/batch3.png'
@@ -115,11 +118,13 @@ import { MdLocationPin } from "react-icons/md";
 import { IoMailSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
 import { FaRegCopyright } from "react-icons/fa6";
-import { MdArrowOutward } from "react-icons/md";
+import { RiArrowRightUpFill } from "react-icons/ri";
 import { MdArrowRight } from "react-icons/md";
 import { MdArrowLeft } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import { BsWhatsapp } from "react-icons/bs";
+
 
 //bootstrap
 
@@ -387,7 +392,7 @@ function App() {
 
   useEffect(() => {
     const text = document.querySelector(".text");
-    if (height > 7000) {
+    if (height > 7400) {
       text?.classList.add("animate");
     }
     // else {
@@ -420,6 +425,27 @@ function App() {
 
 
 
+  const valid = (data) => {
+    if (data === 'inp1') {
+      const lab1 = document.querySelector(".lab1");
+      if (lab1) lab1.style = "top:-10px";
+    } else if (data === 'inp2') {
+      const lab2 = document.querySelector(".lab2");
+      if (lab2) lab2.style= "top:-10px";
+    }
+    else if (data === 'inp3') {
+      const lab3 = document.querySelector(".lab3");
+      if (lab3) lab3.style= "top:-10px";
+    }
+    else if (data === 'inp4') {
+      const lab4 = document.querySelector(".lab4");
+      if (lab4) lab4.style= "top:-10px";
+    }
+  };
+
+
+
+
 
 
   const [menu, setMenus] = useState(false)
@@ -436,36 +462,36 @@ function App() {
         </div>
 
         <div className='links'>
-          <div>
+          <a href=''>
             <img src={vector1} alt="" />
             <p>Why Us</p>
-          </div>
-          <div>
+          </a>
+          <a href=''>
             <img src={vector2} alt="" />
             <p>Courses</p>
-          </div>
-          <div>
+          </a>
+          <a href=''>
             <img src={vector3} alt="" />
             <p>Reviews</p>
-          </div>
-          <div>
+          </a>
+          <a href=''>
             <img src={vector4} alt="" />
             <p>Contact Us</p>
-          </div>
-          <div>
+          </a>
+          <a href=''>
             <img src={vector5} alt="" />
             <p>Placement</p>
-          </div>
+          </a>
         </div>
 
         <div className='submit'>
           <button className='submit_btn1'>Submit Now</button>
-          <button className='submit_btn2'><MdArrowOutward /></button>
+          <button className='submit_btn2'><RiArrowRightUpFill className='btn2_i'  size={18}/></button>
         </div>
 
 
         <div className='menu' onClick={() => setMenus(!menu)}>
-          <CiMenuFries />
+          <CiMenuFries size={25}/>
 
           {menu ? <div className='menu_show'>
             <div>
@@ -497,11 +523,15 @@ function App() {
         </div>
       </nav>
 
+      <div className='whatsapp'>
+      <a href=""><BsWhatsapp /></a>
+      </div>
+
       <section className='home'>
 
 
 
-        <Carousel>
+        <Carousel id='Home'>
           <Carousel.Item>
 
             <div className='home_cons'>
@@ -516,7 +546,7 @@ function App() {
 
             <div className='home_cons'>
               <p className='p1'>India's 1st Institute to Provide <br /> Free Training</p>
-              <p className='p2'>Batch1 Students</p>
+              <p className='p2'>Batch I Students</p>
             </div>
             <img src={batch1} alt="" />
 
@@ -525,7 +555,7 @@ function App() {
           <Carousel.Item>
             <div className='home_cons'>
               <p className='p1'>India's 1st Institute to Provide <br /> Free Training</p>
-              <p className='p2'>Batch2 Students</p>
+              <p className='p2'>Batch II Students</p>
             </div>
 
             <img src={batch2} alt="" />
@@ -536,7 +566,7 @@ function App() {
 
             <div className='home_cons'>
               <p className='p1'>India's 1st Institute to Provide <br /> Free Training</p>
-              <p className='p2'>Batch3 Students</p>
+              <p className='p2'>Batch III Students</p>
             </div>
             <img src={batch3} alt="" />
 
@@ -546,7 +576,7 @@ function App() {
 
             <div className='home_cons'>
               <p className='p1'>India's 1st Institute to Provide <br /> Free Training</p>
-              <p className='p2'>Batch4 Students</p>
+              <p className='p2'>Batch IV Students</p>
             </div>
             <img src={batch4} alt="" />
 
@@ -558,7 +588,7 @@ function App() {
 
 
       <div className="main_card">
-  <h1 className="student_head">Our Placed Students</h1>
+  <h1 className="student_head">Student Placement</h1>
   <div className="marquee">
     <div className="track">
       {[...students, ...students].map((item, index) => (
@@ -727,10 +757,10 @@ function App() {
      
              <div className="slider-controler">
                <div className="swiper-button-prev slider-arrow">
-                 <div><MdArrowLeft style={{fontSize:"35px"}}/><p style={{color:"white",fontSize:"20px",fontWeight:"600"}}>Prev</p></div>
+                 <div><MdArrowLeft style={{fontSize:"35px"}}/><p style={{color:"white",fontSize:"20px",fontWeight:"600",paddingRight: "15px"}}>Prev</p></div>
                </div>
                <div className="swiper-button-next slider-arrow">
-                 <div><p style={{color:"white",fontSize:"20px",fontWeight:"600"}}>Next</p><MdArrowRight style={{fontSize:"35px"}}/></div>
+                 <div><p style={{color:"white",fontSize:"20px",fontWeight:"600",paddingLeft:"15px"}}>Next</p><MdArrowRight style={{fontSize:"35px"}}/></div>
                </div>
                <div className="swiper-pagination"></div>
              </div>
@@ -786,10 +816,10 @@ function App() {
      
              <div className="slider-controler">
                <div className="swiper-button-prev slider-arrow">
-                 <div><MdArrowLeft style={{fontSize:"35px"}}/><p style={{color:"white",fontSize:"20px",fontWeight:"600"}}>Prev</p></div>
+                 <div><MdArrowLeft style={{fontSize:"35px"}}/><p style={{color:"white",fontSize:"20px",fontWeight:"600",paddingRight: "15px"}}>Prev</p></div>
                </div>
                <div className="swiper-button-next slider-arrow">
-                 <div><p style={{color:"white",fontSize:"20px",fontWeight:"600"}}>Next</p><MdArrowRight style={{fontSize:"35px"}}/></div>
+                 <div><p style={{color:"white",fontSize:"20px",fontWeight:"600",paddingLeft:"15px"}}>Next</p><MdArrowRight style={{fontSize:"35px"}}/></div>
                </div>
                <div className="swiper-pagination"></div>
              </div>
@@ -907,44 +937,44 @@ function App() {
           <div className='con_style'>
             <form action="" className='c_form'>
               <div className='c_inp'>
-                <input type="text" name="" id="" className='c_inp1 inp1' />
+              <input type="text" id="inp1" className={`c_inp1 inp1`} onClick={()=>valid('inp1')}/>
                 {validation == false ? <span style={{color:"red",fontSize:"12px"}}>Username cannot be blank</span> :null}
-                <label htmlFor="" className='label1'>Your Full Name*</label>
+                <label htmlFor="" className='lab1'  onClick={()=>valid('inp1')}>Your Full Name*</label>
               </div>
 
               <div className='c_inp'>
-                <input type="number" name="" id="" className='c_inp1 inp2' />
+                <input type="number" name="" id="inp2" className='c_inp1 inp2' onClick={()=>valid('inp2')} />
                 {validation == false ? <span style={{color:"red",fontSize:"12px"}}>Mobile Number cannot be blank</span> :null}
-                <label htmlFor="" className='label1'>Your Mobile Number*</label>
+                <label htmlFor="" className='lab2' onClick={()=>valid('inp2')}>Your Mobile Number*</label>
               </div>
 
               <div className='c_inp'>
 
-                <select name="" id="">
+                <select name="" id="" onClick={()=>valid('inp3')}>
                   <option value=""></option>
                   <option value="">Full Stack Java</option>
                   <option value="">Full Stack Python</option>
                   <option value="">Web Developer</option>
                   <option value="">UI/UX Designer</option>
                 </select>
-                <label htmlFor="">Select Course*</label>
+                <label htmlFor="" className='lab3' onClick={()=>valid('inp3')}>Select Course*</label>
               </div>
 
               <div className='c_inp inp3'>
-                <label htmlFor="">Message*</label>
-                <textarea type="text" name="" id="" />
+                <label htmlFor="" className='lab4' onClick={()=>valid('inp4')}>Message*</label>
+                <textarea type="text" name="" id=""  onClick={()=>valid('inp4')}/>
                 {validation == false ? <span style={{color:"red",fontSize:"12px"}}>Message cannot be blank</span> :null}
               </div>
 
               <div>
                 <button className='submit_btn1'>Submit Now</button>
-                <button className='submit_btn2'><MdArrowOutward /></button>
+                <button className='submit_btn2'><RiArrowRightUpFill /></button>
               </div>
             </form>
           </div>
         </div>
 
-        {validation ?  <div className='valid'><p>Thankyou your application submitted successfully</p> </div>: null}
+        {validation ?  <div className='valid'><p>Thankyou! your application submitted successfully</p> </div>: null}
       
       </section>
 
@@ -955,24 +985,24 @@ function App() {
           <div className='footer_Content'>
             <h1>Our Course</h1>
 
-            <div>
-              <p>UI/UX Design</p>
-              <p>Full Stack Java</p>
-              <p>Full Stact Python</p>
-              <p>FUll Stack Web Developer</p>
-              <p>Digital Marketing</p>
+            <div className='course_a'>
+              <a href="#"><p>UI/UX Design</p></a>
+             <a href="#"><p>Full Stack Java</p></a>
+              <a href="#"><p>Full Stact Python</p></a>
+              <a href="#"><p>FUll Stack Web Developer</p></a>
+              <a href="#"><p>Digital Marketing</p></a>
             </div>
           </div>
 
           <div className='footer_Content'>
             <h1>Navigation</h1>
 
-            <div>
-              <p>Home</p>
-              <p>About</p>
-              <p>Courses</p>
-              <p>Blog</p>
-              <p>Contact</p>
+            <div className='pages_a'>
+              <a href="#Home">Home</a>
+              <a href="#">About</a>
+              <a href="#">Courses</a>
+             <a href="#">Blog</a>
+             <a href="#">Contact</a>
             </div>
           </div>
 
@@ -980,13 +1010,12 @@ function App() {
 
             <h1>Social</h1>
 
-            <div>
-              <p><FaFacebook />Facebook</p>
-              <p><BiLogoInstagramAlt />Instagram</p>
-              <p><GrYoutube />Youtube</p>
-              <p><FaLinkedin />LinkedIn</p>
-              <p><FaTwitter />Twitter</p>
-
+            <div className='footer_Content_a'>
+              <a href="https://www.facebook.com/profile.php?id=61564681836401"><FaFacebook /><p>Facebook</p></a>
+              <a href="https://www.instagram.com/code99_it_academy/"><BiLogoInstagramAlt /><p>Instagram</p></a>
+              <a href="https://www.youtube.com/@Code99ITAcademy"> <GrYoutube /><p>Youtube</p></a>
+             <a href="https://www.linkedin.com/company/code99itacademy/"><FaLinkedin /><p>LinkedIn</p></a>
+              <a href="https://x.com/Code99ITAcademy?t=gnwE4Q7K-6QoAH9ZH6LEgQ&s=08 "><FaTwitter /><p>Twitter</p></a>
             </div>
           </div>
 
@@ -994,7 +1023,7 @@ function App() {
             <h1>Social</h1>
             <div>
 
-              <p><MdLocationPin style={{ fontSize: "25px" }} /> No 16, 1st floor, Sarathy Nagar, Opp To Vijaya Nagar, Velachery, Chennai - 600 042.</p>
+              <p><MdLocationPin style={{ fontSize: "70px" }} /> No 16, 1st floor, Sarathy Nagar, Opp To Vijaya Nagar, Velachery, Chennai - 600 042.</p>
               <p><IoMailSharp />code99itacademy@gmail.com</p>
               <p><FaPhone />63 74 51 07 54</p>
             </div>
